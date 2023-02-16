@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     //jump height
-    public float jump = 4;
+    public float jump = 4f;
 
     bool isGrounded;
 
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
         //se crea una variable donde se multiplican los valores de "x" y "z" para mover al jugador
         //dependiendo hacia donde este volteando a ver
-        Vector3 move = transform.right * x +transform.forward * z;
+        Vector3 move = transform.right * x + transform.forward * z;
 
         //se usa una funcion del character controller para hacer el movimiento
         controller.Move(move * speed * Time.deltaTime);
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
         //se implementa la caida
         controller.Move(velocity * Time.deltaTime);
-
+        //se implementa el salto XD
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jump * -2 * gravity);

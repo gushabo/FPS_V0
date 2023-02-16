@@ -39,7 +39,7 @@ public class MouseLook : MonoBehaviour
         gunRotation -= mouseY;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 30f);
-        gunRotation = Mathf.Clamp(gunRotation, 41f, 120f);
+        gunRotation = Mathf.Clamp(gunRotation, 0f, 120f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         gunPosition.localRotation = Quaternion.Euler(gunRotation, 0f, 0f);
